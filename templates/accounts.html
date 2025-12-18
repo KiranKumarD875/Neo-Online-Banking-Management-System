@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Online Bank - Accounts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Neo Bank</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/accounts" class="active">Accounts</a></li>
+                <li><a href="/transactions">Transactions</a></li>
+                <li><a href="/loans">Loans</a></li>
+                <li><a href="/beneficiaries">Beneficiaries</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <header class="content-header">
+                <h1>My Accounts</h1>
+            </header>
+            
+            <div class="accounts-container">
+                <div id="accountsList" class="accounts-list">
+                    <!-- Accounts will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/accounts.js') }}"></script>
+</body>
+</html>
