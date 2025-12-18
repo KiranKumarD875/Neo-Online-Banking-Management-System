@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Online Bank - Beneficiaries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dashboard-page">
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Neo Bank</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/accounts">Accounts</a></li>
+                <li><a href="/transactions">Transactions</a></li>
+                <li><a href="/loans">Loans</a></li>
+                <li><a href="/beneficiaries" class="active">Beneficiaries</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Beneficiaries</h1>
+            </header>
+            
+            <div class="beneficiaries-container">
+                <div class="add-beneficiary">
+                    <h3>Add Beneficiary</h3>
+                    <form id="beneficiaryForm" class="beneficiary-form">
+                        <div id="errorMessage" class="error-message" style="display: none;"></div>
+                        <div id="successMessage" class="success-message" style="display: none;"></div>
+                        
+                        <div class="form-group">
+                            <label for="beneficiaryName">Beneficiary Name</label>
+                            <input type="text" id="beneficiaryName" name="beneficiaryName" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="accountNumber">Account Number</label>
+                                <input type="text" id="accountNumber" name="accountNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="ifsc">IFSC Code</label>
+                                <input type="text" id="ifsc" name="ifsc" pattern="[A-Z]{4}0[A-Z0-9]{6}">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="upiId">UPI ID (Optional)</label>
+                            <input type="text" id="upiId" name="upiId" placeholder="username@upi">
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Add Beneficiary</button>
+                    </form>
+                </div>
+                
+                <div class="beneficiaries-list">
+                    <h3>My Beneficiaries</h3>
+                    <div id="beneficiariesList" class="beneficiaries-grid">
+                        <!-- Beneficiaries will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/beneficiaries.js') }}"></script>
+</body>
+</html>
