@@ -18,10 +18,10 @@ CORS(app, supports_credentials=True)
 
 # Database configuration
 DB_CONFIG = {
-    'host': os.environ.get('DB_HOST', 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com'),
+    'host': os.environ.get('DB_HOST', 'localhost'),
     'database': os.environ.get('DB_NAME', 'NeoBankingDB'),
-    'user': os.environ.get('DB_USER', '2zoHHZumtrERfKo.root'),
-    'password': os.environ.get('DB_PASSWORD', '6DBi4avh3VrJo3yJ'),
+    'user': os.environ.get('DB_USER', 'root'),
+    'password': os.environ.get('DB_PASSWORD', ''),
     'port': int(os.environ.get('DB_PORT', 4000))
 }
 
