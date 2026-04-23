@@ -18,18 +18,16 @@ CORS(app, supports_credentials=True)
 
 # Database configuration
 DB_CONFIG = {
-    'host': os.environ.get('DB_HOST', 'localhost'),
+    'host': os.environ.get('DB_HOST', 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com'),
     'database': os.environ.get('DB_NAME', 'NeoBankingDB'),
-    'user': os.environ.get('DB_USER', 'root'),
-    'password': os.environ.get('DB_PASSWORD', ''),
+    'user': os.environ.get('DB_USER', '2zoHHZumtrERfKo.root'),
+    'password': os.environ.get('DB_PASSWORD', '6DBi4avh3VrJo3yJ'),
     'port': int(os.environ.get('DB_PORT', 4000))
 }
 
 # TiDB Cloud Serverless requires a secure connection (TLS/SSL)
 if os.environ.get('RENDER'):
-    DB_CONFIG['ssl_verify_identity'] = True
-    DB_CONFIG['ssl_verify_cert'] = True
-    # Render's Ubuntu instances store CA certs here
+    DB_CONFIG['ssl_disabled'] = False
     DB_CONFIG['ssl_ca'] = '/etc/ssl/certs/ca-certificates.crt'
 
 def get_db_connection():
