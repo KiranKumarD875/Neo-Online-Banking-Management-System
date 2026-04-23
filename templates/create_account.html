@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Amrita Bank - Create Accounts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="create-account-page">
+    <div class="create-account-container">
+        <div class="bank-logo">
+            <h1>Neo Amrita Bank</h1>
+            <p>Complete Your Registration</p>
+        </div>
+        
+        <h2>Create Your Banking Accounts</h2>
+        <p>Select the account(s) you wish to create to complete your registration:</p>
+        
+        <div class="account-types">
+            
+                        <div class="account-type-card" data-account-type="savings">
+                <input type="checkbox" id="check-savings" name="accountType" value="savings" class="account-checkbox">
+                <label for="check-savings">
+                    <div class="account-type-icon">💰</div>
+                    <div class="account-type-name">Savings Account</div>
+                    <div class="account-type-desc">For your personal savings with ₹1,000 welcome bonus</div>
+                </label>
+            </div>
+            
+                        <div class="account-type-card" data-account-type="personal">
+                <input type="checkbox" id="check-personal" name="accountType" value="personal" class="account-checkbox">
+                <label for="check-personal">
+                    <div class="account-type-icon">👤</div>
+                    <div class="account-type-name">Personal Account</div>
+                    <div class="account-type-desc">For your day-to-day personal transactions</div>
+                </label>
+            </div>
+            
+                        <div class="account-type-card" data-account-type="business">
+                <input type="checkbox" id="check-business" name="accountType" value="business" class="account-checkbox">
+                <label for="check-business">
+                    <div class="account-type-icon">🏢</div>
+                    <div class="account-type-name">Business Account</div>
+                    <div class="account-type-desc">For your business and professional needs</div>
+                </label>
+            </div>
+        </div>
+        
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        <div id="successMessage" class="success-message" style="display: none;"></div>
+        
+        <div class="button-group" style="margin-top: 25px;">
+            <button type="button" class="btn-primary" id="createSelectedAccountsBtn">
+                Create Selected Accounts
+            </button>
+
+            <button type="button" class="btn-secondary" id="createAllAccountsShortcutBtn">
+                Create All Three Accounts
+            </button>
+        </div>
+
+        <div id="createdAccounts" style="display: none; margin-top: 30px;">
+                    </div>
+        
+        <div class="form-footer">
+            <p>After account creation, you will be redirected to login.</p>
+        </div>
+    </div>
+
+        <script src="{{ url_for('static', filename='js/accounts.js') }}"></script>
+</body>
+</html>
