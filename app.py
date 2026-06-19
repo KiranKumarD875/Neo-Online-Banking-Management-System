@@ -17,11 +17,9 @@ app.secret_key = secrets.token_hex(32)
 CORS(app, supports_credentials=True)
 
 # Database configuration
-# NOTE: Real credentials are stored securely in Render's Environment Variables.
-# The fallback values below are only for local development.
 DB_CONFIG = {
-    'host': os.environ.get('DB_HOST', 'localhost'),
-    'database': os.environ.get('DB_NAME', 'NeoBankingDB'),
+    'host': os.environ.get('DB_HOST', 'xxxxxxx'),
+    'database': os.environ.get('DB_NAME', 'xxxxxxxx'),
     'user': os.environ.get('DB_USER', 'root'),
     'password': os.environ.get('DB_PASSWORD', ''),
     'port': int(os.environ.get('DB_PORT', 4000))
