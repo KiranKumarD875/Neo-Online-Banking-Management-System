@@ -25,6 +25,11 @@ DB_CONFIG = {
     'port': int(os.environ.get('DB_PORT', 3306))
 }
 
+# TiDB Cloud Serverless requires a secure connection (TLS/SSL) in production
+if os.environ.get('RENDER'):
+    DB_CONFIG['ssl_disabled'] = False
+    DB_CONFIG['ssl_ca'] = '/etc/ssl/certs/ca-certificates.crt'
+
 def get_db_connection():
     """Create database connection"""
     try:
