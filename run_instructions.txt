@@ -1,0 +1,43 @@
+QUICK START GUIDE - Online Banking System
+==========================================
+
+STEP 1: DATABASE SETUP
+----------------------
+1. Start MySQL Server
+2. Run your database script to create 'OnlineBanking' database
+3. Update password in app.py (line ~15):
+   DB_CONFIG = {
+       'password': 'YOUR_MYSQL_PASSWORD'  # Add your MySQL password here
+   }
+
+STEP 2: INSTALL DEPENDENCIES
+---------------------------
+Open terminal in project folder and run:
+   pip install -r requirements.txt
+
+STEP 3: RUN APPLICATION
+----------------------
+In terminal, run:
+   python app.py
+
+STEP 4: ACCESS APPLICATION
+-------------------------
+Open browser and go to:
+   http://localhost:5000
+
+STEP 5: LOGIN/REGISTER
+---------------------
+- Click "Register here" to create new account
+- Or update sample user passwords in database
+
+That's it! Your banking system is ready to use.
+
+FEATURES AVAILABLE:
+- Account Dashboard
+- Fund Transfers  
+- Loan Applications
+- Beneficiary Management
+- Banking Services
+- Transaction History
+
+For detailed instructions, see README.md
